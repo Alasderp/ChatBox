@@ -21,11 +21,6 @@ public class RedditService {
 
     public RedditPost getMostUpvotedPost() throws IOException {
 
-        System.setProperty("http.proxyHost", "107.15.42.4");
-        System.setProperty("http.proxyPort", "8080");
-        System.setProperty("https.proxyHost", "107.15.42.4");
-        System.setProperty("https.proxyPort", "8080");
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("User-Agent", "AlasdairMemeBot");
         headers.add("Content-Type", "text/plain");
