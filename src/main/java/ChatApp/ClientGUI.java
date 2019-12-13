@@ -1,14 +1,10 @@
 package ChatApp;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import ChatApp.ClientGUI;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
@@ -18,9 +14,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextPane;
-import java.awt.ScrollPane;
-import javax.swing.JScrollBar;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -137,6 +130,13 @@ public class ClientGUI extends JFrame {
 
 					System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
 					VoiceManager vm = VoiceManager.getInstance();
+
+					Voice[] voices = vm.getVoices();
+
+					for(int x = 0; x < voices.length; x++){
+						System.out.println("\n"+voices[x].getName()+"\n");
+					}
+
 					Voice voice = vm.getVoice("kevin");
 					voice.allocate();
 
